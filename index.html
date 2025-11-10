@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+
+  <!-- Navbar here, white text and transparent bg to overlay hero -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- Brand (literally just me tbh) -->
+      <a class="navbar-brand fw-bold" href="#brand">MKP</a>
+
+
+      <!-- Toggler (hamburger menu) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <!-- for lazy people to click if they cant bother to scroll. im not salty trust me -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Socials</a></li>
+          <li class="nav-item ms-lg-3"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <section id="hero" class="container-fluid min-vh-100 position-relative d-flex align-items-center">
+  <!-- Overlay -->
+  <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50"></div>
+
+
+  <!-- Centered stuff -->
+  <div class="container position-relative hero-content">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="card border-0 shadow-lg bg-body-tertiary bg-opacity-75">
+          <div class="card-body text-center p-4 p-md-5">
+            <h1 class="display-5 fw-bold mb-2">Your Name</h1>
+            <p class="lead mb-4">Engineering student & guitarist. I'm second from the left if you couldn't tell somehow.</p>
+            <div class="d-flex gap-3 justify-content-center">
+              <a href="#projects" class="btn btn-primary">View Projects</a>
+              <a href="#contact" class="btn btn-outline-primary">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- About here (I used container instead of container-fluid for cleaner text width) -->
+   <!-- Lazy image loading for performance -->
+  <section id="about" class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-5 mb-4 mb-md-0 text-center">
+        <img src="img/about.jpg" class="img-fluid rounded-3 shadow text-center" alt="about img" loading="lazy">
+      </div>
+      <div class="col-md-7">
+        <h2 class="fw-bold mb-3">About Me</h2>
+        <p class="lead mb-3">Mechatronics and Robotics Student at Ngee Ann Polytechnic | Y2</p>
+        <ul class="list-unstyled mb-0">
+          <li><strong>Institution: </strong>Ngee Ann Polytechnic (2024 - 2027)</li>
+          <li><strong>Focus: </strong>N50 Diploma in Mechatronics & Robotics (MR)</li>
+          <li><strong>Interests: </strong>Music and Robots (Get it? MR, mechatronics and robotics? I'm sorry)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills stuff here -->
+
+<section id="skills" class="container py-5">
+  <div class="row align-items-center g-5">
+    <div class="col-lg-6">
+      <h2 class="fw-bold text-center text-lg-start mb-4">Skills</h2>
+
+      <!-- Programming -->
+      <div class="mb-4">
+        <h5 class="fw-semibold text-uppercase">Programming</h5>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge bg-primary-subtle text-primary">C</span>
+          <span class="badge bg-primary-subtle text-primary">Python</span>
+          <span class="badge bg-primary-subtle text-primary">Arduino IDE</span>
+        </div>
+      </div>
+
+      <!-- Design -->
+      <div class="mb-4">
+        <h5 class="fw-semibold text-uppercase">Design</h5>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge bg-success-subtle text-success">Fusion360</span>
+          <span class="badge bg-success-subtle text-success">CAD</span>
+        </div>
+      </div>
+
+      <!-- Systems -->
+      <div class="mb-4">
+        <h5 class="fw-semibold text-uppercase">Systems</h5>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge bg-info-subtle text-info">YOLOv11</span>
+          <span class="badge bg-info-subtle text-info">FluidSIM</span>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="mb-4">
+        <h5 class="fw-semibold text-uppercase">Soft Skills</h5>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge bg-warning-subtle text-warning">Leadership</span>
+          <span class="badge bg-warning-subtle text-warning">Collaboration</span>
+          <span class="badge bg-warning-subtle text-warning">Communication</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 text-center">
+      <img src="img/skills.jpg" class="img-fluid rounded-3 shadow skills-image" alt="Skills image" loading="lazy">
+    </div>
+  </div>
+</section>
+
+
+  <!-- Projects here -->
+  <section id="projects" class="container-fluid py-5">
+    <div class="container text-center">
+      <h2>Projects</h2>
+    </div>
+  </section>
+
+  <!-- Contacts here -->
+  <section id="contact" class="container-fluid py-5">
+    <div class="container text-center">
+      <h2>Contact</h2>
+    </div>
+  </section>
+
+  <!-- Footer here -->
+  <footer class="container-fluid py-4 text-center">
+    Footer
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>

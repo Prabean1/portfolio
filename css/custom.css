@@ -1,0 +1,53 @@
+#hero {
+  background: url("../img/hero.jpg") center / cover no-repeat fixed;
+  position: relative;
+  overflow: hidden;            
+}
+#hero .hero-overlay {
+  z-index: 1;
+  pointer-events: none;        /* ensures overlay doesn't block links */
+}
+
+#hero .hero-content {
+  position: relative;
+  z-index: 2;                  /* above overlay */
+}
+
+/* subtle shadow on navbar when hero background is bright */
+.navbar-light.bg-light.scrolled {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-card {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  transform-origin: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* image overlay for darkening effect */
+.project-card .card-img-overlay {
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.22s ease;
+}
+
+.project-card:hover .card-img-overlay {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.card-link-reset {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* mobile fallback for hero */
+@media (max-width: 767.98px) {
+  #hero {
+    background-attachment: scroll;
+  }
+}
