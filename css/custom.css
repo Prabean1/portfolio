@@ -45,6 +45,14 @@
   text-decoration: none;
 }
 
+.skills-image {
+  max-width: 50%;             /* keep skills image from dominating the section */
+}
+
+.about-image {
+  max-width: 60%;             /* keep about image consistent with skills sizing */
+}
+
 /* mobile fallback for hero */
 @media (max-width: 767.98px) {
   #hero {
