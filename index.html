@@ -1,22 +1,32 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name — Portfolio</title>
+  <title>MK Praveen — Portfolio</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/custom.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
+  <!-- Canvas Container for Grid Distortion (Fixed Background) -->
+  <div id="canvas-container"></div>
 
   <!-- Navbar that overlays the hero section -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-absolute w-100" style="z-index: 10;">
     <div class="container-fluid">
-      <!-- Brand (literally just me tbh) -->
-      <a class="navbar-brand fw-bold" href="#">Your Name</a>
+      <!-- Brand -->
+      <a class="navbar-brand fw-bold" href="#">MK Praveen</a>
 
 
       <!-- Toggler (hamburger menu) -->
@@ -33,7 +43,13 @@
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#socials">Socials</a></li>
-          <li class="nav-item ms-lg-3"><a class="btn btn-outline-light" href="#contact">Contact</a></li>
+          <li class="nav-item d-flex align-items-center ms-lg-3">
+            <div class="form-check form-switch mb-0">
+              <input class="form-check-input" type="checkbox" id="distortionToggle">
+              <label class="form-check-label text-light small" for="distortionToggle">Low Perf. Mode</label>
+            </div>
+          </li>
+          <li class="nav-item ms-lg-3"><a class="btn btn-outline-primary" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -41,44 +57,48 @@
 
 
   <section id="hero" class="container-fluid min-vh-100 position-relative d-flex align-items-center">
-  <!-- Overlay -->
-  <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50" style="z-index: 1;"></div>
+    <!-- Canvas Container for Grid Distortion -->
+    <div id="canvas-container" class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 0;"></div>
+
+    <!-- Overlay Removed as requested -->
 
 
-  <!-- Centered stuff -->
-  <div class="container position-relative hero-content">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8 col-lg-6">
-        <div class="card border-0 shadow-lg bg-body-tertiary bg-opacity-75">
-          <div class="card-body text-center p-4 p-md-5">
-            <h1 class="display-5 fw-bold mb-2">MK Praveen</h1>
-            <p class="lead mb-4">Engineering student & guitarist. I'm second from the left if you couldn't tell somehow.</p>
-            <div class="d-flex gap-3 justify-content-center">
-              <a href="#projects" class="btn btn-primary">View Projects</a>
-              <a href="#contact" class="btn btn-outline-primary">Contact</a>
+    <!-- Centered stuff -->
+    <div class="container position-relative hero-content">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="card border-0 shadow-lg bg-body-tertiary bg-opacity-75 backdrop-blur">
+            <div class="card-body text-center p-4 p-md-5">
+              <h1 class="display-5 fw-bold mb-2">MK Praveen</h1>
+              <p class="lead mb-4">
+                I'm a <span class="rotating-text-wrapper"><span id="rotating-text">mechatronics student</span></span>
+              </p>
+              <div class="d-flex gap-3 justify-content-center">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline-primary">Contact</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<main>
-    <!-- About here (I used container instead of container-fluid for cleaner text width) -->
-    <!-- Lazy image loading for performance -->
-    <section id="about" class="container py-4">
+  <main>
+    <!-- About here -->
+    <section id="about" class="container py-5">
       <div class="row align-items-center">
         <div class="col-md-5 mb-4 mb-md-0 text-center">
-          <img src="img/about.jpg" class="img-fluid rounded-3 shadow text-center about-image" alt="A photo of me and my bandmates" loading="lazy">
+          <img src="img/about.jpg" class="img-fluid rounded-3 shadow text-center about-image" loading="lazy">
         </div>
         <div class="col-md-7">
-          <h2 class="fw-bold mb-3">About Me</h2>
-          <p class="lead mb-3">Mechatronics and Robotics Student at Ngee Ann Polytechnic | Y2</p>
-          <ul class="list-unstyled mb-0">
+          <h2 class="fw-bold mb-3 text-white">About Me</h2>
+          <p class="lead mb-3 text-muted">Mechatronics and Robotics Student at Ngee Ann Polytechnic | Y2</p>
+          <ul class="list-unstyled mb-0 text-light">
             <li><strong>Institution: </strong>Ngee Ann Polytechnic (2024 - 2027)</li>
             <li><strong>Focus: </strong>N50 Diploma in Mechatronics & Robotics (MR)</li>
             <li><strong>Interests: </strong>Music and Robots (Get it? MR, mechatronics and robotics? I'm sorry)</li>
+            <li><strong>Specialisation: </strong>Autonomous Systems</li>
           </ul>
         </div>
       </div>
@@ -86,94 +106,167 @@
 
     <!-- Skills stuff here -->
 
-  <section id="skills" class="container py-4">
-    <div class="row align-items-center g-4">
-      <div class="col-lg-6">
-        <h2 class="fw-bold text-center text-lg-start mb-3">Skills</h2>
+    <section id="skills" class="container py-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2 class="fw-bold text-center text-lg-start mb-3 text-white">Skills</h2>
 
-        <!-- Programming -->
-        <div class="mb-3">
-          <h5 class="fw-semibold text-uppercase">Programming</h5>
-          <div class="d-flex flex-wrap gap-2">
-            <span class="badge bg-primary-subtle text-primary">C</span>
-            <span class="badge bg-primary-subtle text-primary">Python</span>
-            <span class="badge bg-primary-subtle text-primary">Arduino IDE</span>
+          <!-- Programming -->
+          <div class="mb-3">
+            <h5 class="fw-semibold text-uppercase text-muted">Programming</h5>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-primary-subtle text-primary">C</span>
+              <span class="badge bg-primary-subtle text-primary">Python</span>
+              <span class="badge bg-primary-subtle text-primary">Arduino IDE</span>
+            </div>
+          </div>
+
+          <!-- Design -->
+          <div class="mb-3">
+            <h5 class="fw-semibold text-uppercase text-muted">Design</h5>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-success-subtle text-success">Fusion360</span>
+              <span class="badge bg-success-subtle text-success">CAD</span>
+            </div>
+          </div>
+
+          <!-- Systems -->
+          <div class="mb-3">
+            <h5 class="fw-semibold text-uppercase text-muted">Systems</h5>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-info-subtle text-info">YOLOv11</span>
+              <span class="badge bg-info-subtle text-info">FluidSIM</span>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="mb-3">
+            <h5 class="fw-semibold text-uppercase text-muted">Soft Skills</h5>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-warning-subtle text-warning">Leadership</span>
+              <span class="badge bg-warning-subtle text-warning">Collaboration</span>
+              <span class="badge bg-warning-subtle text-warning">Communication</span>
+            </div>
           </div>
         </div>
-
-        <!-- Design -->
-        <div class="mb-3">
-          <h5 class="fw-semibold text-uppercase">Design</h5>
-          <div class="d-flex flex-wrap gap-2">
-            <span class="badge bg-success-subtle text-success">Fusion360</span>
-            <span class="badge bg-success-subtle text-success">CAD</span>
-          </div>
-        </div>
-
-        <!-- Systems -->
-        <div class="mb-3">
-          <h5 class="fw-semibold text-uppercase">Systems</h5>
-          <div class="d-flex flex-wrap gap-2">
-            <span class="badge bg-info-subtle text-info">YOLOv11</span>
-            <span class="badge bg-info-subtle text-info">FluidSIM</span>
-          </div>
-        </div>
-
-        <!-- Soft Skills -->
-        <div class="mb-3">
-          <h5 class="fw-semibold text-uppercase">Soft Skills</h5>
-          <div class="d-flex flex-wrap gap-2">
-            <span class="badge bg-warning-subtle text-warning">Leadership</span>
-            <span class="badge bg-warning-subtle text-warning">Collaboration</span>
-            <span class="badge bg-warning-subtle text-warning">Communication</span>
-          </div>
+        <div class="col-lg-6 text-center">
+          <img src="img/skills.jpg" class="img-fluid rounded-3 shadow skills-image" loading="lazy">
         </div>
       </div>
-      <div class="col-lg-6 text-center">
-        <img src="img/skills.jpg" class="img-fluid rounded-3 shadow skills-image" alt="A robot arm assembling a circuit board" loading="lazy">
-      </div>
-    </div>
-  </section>
+    </section>
 
 
     <!-- Projects here -->
-    <section id="projects" class="container-fluid bg-light py-5">
+    <section id="projects" class="container-fluid py-5 bg-light">
       <div class="container text-center">
-        <h2 class="mb-5">Projects</h2>
-        <!-- Add your project cards or content here -->
+        <h2 class="mb-5 text-white">Projects</h2>
+        <!-- Bounce Cards Container -->
+        <div class="bounce-container d-flex justify-content-center align-items-center py-5">
+
+          <!-- Card 1 -->
+          <div class="project-card card border-0 shadow">
+            <div class="card-img-top-wrapper">
+              <img src="https://placehold.co/600x400/222/fff?text=Project+1" class="card-img-top" alt="Project 1">
+            </div>
+            <div class="card-body text-start">
+              <h5 class="card-title fw-bold text-white">Autonomous Robot</h5>
+              <p class="card-text small text-muted">A self-navigating robot built with Arduino and ultrasonic sensors.
+              </p>
+              <a href="project.html?id=1" class="btn btn-sm btn-outline-primary stretched-link">View Details</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="project-card card border-0 shadow">
+            <div class="card-img-top-wrapper">
+              <img src="https://placehold.co/600x400/333/fff?text=Project+2" class="card-img-top" alt="Project 2">
+            </div>
+            <div class="card-body text-start">
+              <h5 class="card-title fw-bold text-white">Smart Home Hub</h5>
+              <p class="card-text small text-muted">IoT dashboard for controlling home appliances via a web interface.
+              </p>
+              <a href="project.html?id=2" class="btn btn-sm btn-outline-primary stretched-link">View Details</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="project-card card border-0 shadow">
+            <div class="card-img-top-wrapper">
+              <img src="https://placehold.co/600x400/444/fff?text=Project+3" class="card-img-top" alt="Project 3">
+            </div>
+            <div class="card-body text-start">
+              <h5 class="card-title fw-bold text-white">Line Follower</h5>
+              <p class="card-text small text-muted">High-speed line following robot for competition purposes.</p>
+              <a href="project.html?id=3" class="btn btn-sm btn-outline-primary stretched-link">View Details</a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="project-card card border-0 shadow">
+            <div class="card-img-top-wrapper">
+              <img src="https://placehold.co/600x400/555/fff?text=Project+4" class="card-img-top" alt="Project 4">
+            </div>
+            <div class="card-body text-start">
+              <h5 class="card-title fw-bold text-white">Weather Station</h5>
+              <p class="card-text small text-muted">Solar-powered weather station logging data to the cloud.</p>
+              <a href="project.html?id=4" class="btn btn-sm btn-outline-primary stretched-link">View Details</a>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="project-card card border-0 shadow">
+            <div class="card-img-top-wrapper">
+              <img src="https://placehold.co/600x400/666/fff?text=Project+5" class="card-img-top" alt="Project 5">
+            </div>
+            <div class="card-body text-start">
+              <h5 class="card-title fw-bold text-white">Portfolio Site</h5>
+              <p class="card-text small text-muted">This very website! Built with Bootstrap and custom JS.</p>
+              <a href="project.html?id=5" class="btn btn-sm btn-outline-primary stretched-link">View Details</a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
     <!-- Socials Section -->
     <section id="socials" class="container py-5">
       <div class="container text-center">
-        <h2 class="mb-4">Socials</h2>
-        <p>Connect with me on other platforms!</p>
-        <!-- Add social media links/icons here -->
-        <!-- Example: <a href="#" class="btn btn-primary">LinkedIn</a> -->
+        <h2 class="mb-4 text-white">Socials</h2>
+        <p class="text-muted">Connect with me on other platforms!</p>
       </div>
     </section>
 
     <!-- Contacts here -->
-    <section id="contact" class="container-fluid bg-light py-5">
+    <section id="contact" class="container-fluid py-5 bg-light">
       <div class="container text-center">
-        <h2 class="mb-4">Contact</h2>
-        <p>Feel free to reach out to me via email.</p>
+        <h2 class="mb-4 text-white">Contact</h2>
+        <p class="text-muted">Feel free to reach out to me via email.</p>
         <!-- Add contact form or email link here -->
       </div>
     </section>
-</main>
+  </main>
 
   <!-- Footer here -->
   <footer class="container-fluid py-4 text-center bg-dark text-white">
     <div class="container">
-      <p class="mb-0">&copy; 2025 Your Name. All Rights Reserved.</p>
+      <p class="mb-0">&copy; 2025 MK Praveen. All Rights Reserved.</p>
     </div>
   </footer>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Grid Distortion Effect -->
+  <script src="js/grid-distortion.js"></script>
+
+  <!-- Rotating Text Animation -->
+  <script src="js/rotating-text.js"></script>
+
   <script src="js/main.js" defer></script>
 </body>
+
 </html>
