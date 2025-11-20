@@ -1,16 +1,19 @@
 #hero {
   background: url("../img/hero.jpg") center / cover no-repeat fixed;
   position: relative;
-  overflow: hidden;            
+  overflow: hidden;
 }
+
 #hero .hero-overlay {
   z-index: 1;
-  pointer-events: none;        /* ensures overlay doesn't block links */
+  pointer-events: none;
+  /* ensures overlay doesn't block links */
 }
 
 #hero .hero-content {
   position: relative;
-  z-index: 2;                  /* above overlay */
+  z-index: 2;
+  /* above overlay */
 }
 
 /* subtle shadow on navbar when hero background is bright */
@@ -46,11 +49,13 @@
 }
 
 .skills-image {
-  max-width: 50%;             /* keep skills image from dominating the section */
+  max-width: 50%;
+  /* keep skills image from dominating the section */
 }
 
 .about-image {
-  max-width: 60%;             /* keep about image consistent with skills sizing */
+  max-width: 60%;
+  /* keep about image consistent with skills sizing */
 }
 
 /* mobile fallback for hero */
