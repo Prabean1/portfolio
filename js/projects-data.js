@@ -1,14 +1,12 @@
-// Project Data - Edit this file to update project details
-// You can use HTML tags like <br> or <strong> within the strings if needed.
-
 const projectData = {
   '1': {
     title: 'Network Infrastructure Design',
     subtitle: 'Network Design / 2024',
     summary: 'Designed a small-scale network using the Fixed Length Subnet Mask (FLSM) concept.',
-    img: 'img/network.png', // Ensure this path is correct relative to project.html
+    img: 'img/network.png',
     description: `
-      <p>Designed a small-scale network using the Fixed Length Subnet Mask (FLSM) concept. Implemented IP addressing, Packet Tracer configuration, and documentation.</p>
+      <p>I segmented a 102.12.100.0/24 network into multiple subnets, manually configuring IP addresses, subnet masks, and default gateways on all routers and end devices. Initial inter-subnet connectivity was established using static routing. This foundation was then tested using commands like ping, tracert, and show ip route to verify correct addressing and routing paths between all segments.</p>
+      <p>To enhance the network's resilience and manageability, I implemented two key features out of syllabus. I replaced static routes with OSPF (Open Shortest Path First) dynamic routing, incorporating a third router (R3) to serve as an automatic failover path. This ensures continuous network operation and fast convergence should the primary link between R1 and R2 fail, which was successfully demonstrated. Second, I introduced a centralized Syslog server to collect and timestamp system events from all routers. This centralized logging simplifies troubleshooting and aligns the network design with real-world best practices for monitoring and operational efficiency.</p>
       <p>You may view the Cisco PT Files and the full technical report in the Drive link!</p>
     `,
     features: [
@@ -20,12 +18,14 @@ const projectData = {
       role: 'Lead (and sole) Developer',
       timeline: 'Nov 2024 - Apr 2025',
       stack: 'Cisco Packet Tracer'
-    }
+    },
+    driveLink: 'https://drive.google.com/drive/folders/1U5ERK0gg9HU10Ir6MSRqPn3q8PtGYyUt?usp=sharing',
+    buttonText: 'View PT and Report!'
   },
   '2': {
     title: 'Lively App Prototype',
     subtitle: 'Interdisciplinary Project / 2024',
-    summary: 'IoT dashboard for controlling home appliances via a web interface.',
+    summary: 'Intuitive dashboard for taking charge of your health.',
     img: 'img/lively.png',
     description: `
       <p>The core motive of Lively is to help individuals overcome challenges related to unhealthy stress coping mechanisms, irregular sleep habits, and poorly managed diets, which negatively impact their productivity and overall well-being.</p>
@@ -43,7 +43,9 @@ const projectData = {
       role: 'Full Stack Dev',
       timeline: 'Oct 2024 - Jan 2025',
       stack: 'Thunkable, Canva, surviving without ChatGPT'
-    }
+    },
+    driveLink: 'https://drive.google.com/drive/folders/13wFpx7RHGz_a9Lt-ZUuVGVY1iooiwmPp?usp=sharing',
+    buttonText: 'View Presentation Files'
   },
   '3': {
     title: 'Object Detection System (YOLOv11)',
@@ -65,46 +67,55 @@ const projectData = {
       role: 'Lead (and sole) Developer',
       timeline: 'October 2025 - Present',
       stack: 'YOLOv11, PyTorch, Roboflow, Anaconda'
-    }
+    },
+    driveLink: 'https://drive.google.com/drive/folders/116tm3P9zhabc0mInC21dBzW7KW6fa1-k?usp=sharing',
+    buttonText: 'View Updated Table (and soon UI/UX)'
   },
   '4': {
-    title: 'Weather Station',
-    subtitle: 'IoT / 2023',
-    summary: 'Solar-powered weather station logging data to the cloud.',
-    img: 'https://placehold.co/1200x600/555/fff?text=Weather+Station',
-    description: `
-      <p>Solar-powered weather station logging data to the cloud. It measures temperature, humidity, pressure, and air quality.</p>
-      <p>Data is visualized on a public website, allowing the local community to monitor weather conditions.</p>
-    `,
-    features: [
-      'Solar Powered Operation',
-      'Cloud Data Logging',
-      'Air Quality Monitoring'
-    ],
-    info: {
-      role: 'Firmware Dev',
-      timeline: '5 Weeks',
-      stack: 'ESP32, AWS IoT, React'
-    }
-  },
-  '5': {
     title: 'Portfolio Site',
     subtitle: 'Web Dev / 2025',
     summary: 'This very website! Built with Bootstrap and custom JS.',
-    img: 'https://placehold.co/1200x600/666/fff?text=Portfolio+Site',
+    img: 'img/website.png',
     description: `
-      <p>This very website! Built with Bootstrap and custom JS to showcase my projects and skills.</p>
+       <p>This very website! Built with Bootstrap and custom JS to showcase my projects and skills.</p>
       <p>Features a custom grid distortion effect and a dynamic project gallery.</p>
     `,
     features: [
       'Responsive Design',
       'Custom WebGL Effects',
-      'Dynamic Content Loading'
+      'Dynamic Content Loading',
+      'Undeniable je ne sais quoi'
     ],
     info: {
-      role: 'Frontend Dev',
+      role: 'Full Stack Dev',
       timeline: '1 Week',
       stack: 'HTML, CSS, Bootstrap, Three.js'
-    }
+    },
+    driveLink: 'https://prabean1.github.io/portfolio/',
+    buttonText: 'View website!'
+  },
+  '5': {
+    title: 'More incoming soon!',
+    subtitle: 'Plans / 2025 onwards',
+    summary: 'Hard at work on more cool projects, trust me.',
+    img: 'https://placehold.co/1200x600/666/fff?text=WIP',
+    description: `
+      <p>Unsurprisingly, I have more projects in the works. What did you expect to read here?</p>
+    `,
+    features: [
+      'Literally nothing'
+    ],
+    info: {
+      role: 'tired',
+      timeline: 'in the distant future',
+      stack: 'my laptop, me and coffee'
+    },
+    driveLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    buttonText: 'View sneak peek!'
   }
+};
+
+const socialsData = {
+  link: 'https://www.linkedin.com/in/praveen-mukesh-kumar/',
+  buttonText: 'Connect with me!'
 };
