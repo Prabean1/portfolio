@@ -57,10 +57,9 @@
 
 
   <section id="hero" class="container-fluid min-vh-100 position-relative d-flex align-items-center">
-    <!-- Canvas Container for Grid Distortion -->
+    <!-- Canvas Container for grid Distortion -->
     <div id="canvas-container" class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 0;"></div>
 
-    <!-- Overlay Removed as requested -->
 
 
     <!-- Centered stuff -->
@@ -70,8 +69,9 @@
           <div class="card border-0 shadow-lg bg-body-tertiary bg-opacity-75 backdrop-blur">
             <div class="card-body text-center p-4 p-md-5">
               <h1 class="display-5 fw-bold mb-2">MK Praveen</h1>
-              <p class="lead mb-4">
-                I'm a <span class="rotating-text-wrapper"><span id="rotating-text">mechatronics student</span></span>
+              <p class="lead mb-4 d-flex flex-column align-items-center gap-2">
+                <span>I'm a</span>
+                <span class="rotating-text-wrapper"><span id="rotating-text">mechatronics student</span></span>
               </p>
               <div class="d-flex gap-3 justify-content-center">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -161,70 +161,8 @@
       <div class="container text-center">
         <h2 class="mb-5 text-white">Projects</h2>
         <!-- Bounce Cards Container -->
-        <div class="bounce-container d-flex justify-content-center align-items-center py-5">
-
-          <!-- Card 1 -->
-          <div class="project-card card border-0 shadow">
-            <div class="card-img-top-wrapper">
-              <img src="https://placehold.co/600x400/222/fff?text=Project+1" class="card-img-top" alt="Project 1">
-            </div>
-            <div class="card-body text-start">
-              <h5 class="card-title fw-bold text-white">Autonomous Robot</h5>
-              <p class="card-text small text-muted">A self-navigating robot built with Arduino and ultrasonic sensors.
-              </p>
-              <a href="project.html?id=1" class="btn btn-sm btn-outline-primary stretched-link">View Details</a>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="project-card card border-0 shadow">
-            <div class="card-img-top-wrapper">
-              <img src="https://placehold.co/600x400/333/fff?text=Project+2" class="card-img-top" alt="Project 2">
-            </div>
-            <div class="card-body text-start">
-              <h5 class="card-title fw-bold text-white">Smart Home Hub</h5>
-              <p class="card-text small text-muted">IoT dashboard for controlling home appliances via a web interface.
-              </p>
-              <a href="project.html?id=2" class="btn btn-sm btn-outline-primary stretched-link">View Details</a>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="project-card card border-0 shadow">
-            <div class="card-img-top-wrapper">
-              <img src="https://placehold.co/600x400/444/fff?text=Project+3" class="card-img-top" alt="Project 3">
-            </div>
-            <div class="card-body text-start">
-              <h5 class="card-title fw-bold text-white">Line Follower</h5>
-              <p class="card-text small text-muted">High-speed line following robot for competition purposes.</p>
-              <a href="project.html?id=3" class="btn btn-sm btn-outline-primary stretched-link">View Details</a>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="project-card card border-0 shadow">
-            <div class="card-img-top-wrapper">
-              <img src="https://placehold.co/600x400/555/fff?text=Project+4" class="card-img-top" alt="Project 4">
-            </div>
-            <div class="card-body text-start">
-              <h5 class="card-title fw-bold text-white">Weather Station</h5>
-              <p class="card-text small text-muted">Solar-powered weather station logging data to the cloud.</p>
-              <a href="project.html?id=4" class="btn btn-sm btn-outline-primary stretched-link">View Details</a>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="project-card card border-0 shadow">
-            <div class="card-img-top-wrapper">
-              <img src="https://placehold.co/600x400/666/fff?text=Project+5" class="card-img-top" alt="Project 5">
-            </div>
-            <div class="card-body text-start">
-              <h5 class="card-title fw-bold text-white">Portfolio Site</h5>
-              <p class="card-text small text-muted">This very website! Built with Bootstrap and custom JS.</p>
-              <a href="project.html?id=5" class="btn btn-sm btn-outline-primary stretched-link">View Details</a>
-            </div>
-          </div>
-
+        <div class="bounce-container d-flex justify-content-center align-items-center py-5" id="projects-container">
+          <!-- Cards will be generated here -->
         </div>
       </div>
     </section>
@@ -265,6 +203,36 @@
 
   <!-- Rotating Text Animation -->
   <script src="js/rotating-text.js"></script>
+
+  <!-- Project Data -->
+  <script src="js/projects-data.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('projects-container');
+
+      // Iterate over projectData and create cards
+      Object.keys(projectData).forEach(id => {
+        const project = projectData[id];
+
+        const card = document.createElement('div');
+        card.className = 'project-card card border-0 shadow';
+
+        card.innerHTML = `
+          <div class="card-img-top-wrapper">
+            <img src="${project.img}" class="card-img-top" alt="${project.title}">
+          </div>
+          <div class="card-body text-start">
+            <h5 class="card-title fw-bold text-white">${project.title}</h5>
+            <p class="card-text small text-muted">${project.summary}</p>
+            <a href="project.html?id=${id}" class="btn btn-sm btn-outline-primary stretched-link">View Details</a>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    });
+  </script>
 
   <script src="js/main.js" defer></script>
 </body>

@@ -98,12 +98,17 @@ a:hover {
 }
 
 /* Main Content Stacking */
-main,
 footer,
 #hero {
   position: relative;
   z-index: 1;
   /* Place above canvas */
+}
+
+main {
+  position: relative;
+  z-index: 3;
+  /* Place above hero overlay */
 }
 
 /* Hero Section */
@@ -146,7 +151,7 @@ footer,
   border-radius: 4px;
   background-color: rgba(255, 46, 46, 0.1);
   /* Subtle red tint */
-  margin-left: 5px;
+  /* margin-left: 5px; Removed for stacked layout */
   box-shadow: 0 0 10px rgba(255, 46, 46, 0.3);
   /* width: 100%; Removed to allow centering */
   /* text-align: left; Removed to allow centering */
@@ -306,7 +311,7 @@ footer,
 
 .skills-image,
 .about-image {
-  max-width: 100%;
+  width: 50%;
   border-radius: 1rem;
 }
 

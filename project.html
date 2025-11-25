@@ -79,7 +79,8 @@
           <h3 class="fw-bold mb-4 text-white">About the Project</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat
             nulla pariatur.</p>
 
           <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
@@ -110,7 +111,6 @@
             <li class="mb-2"><strong>Timeline:</strong> 3 Weeks</li>
             <li class="mb-2"><strong>Tech Stack:</strong> HTML, CSS, JS</li>
           </ul>
-          <!-- Live Demo button removed as requested -->
         </div>
       </div>
     </div>
@@ -122,27 +122,60 @@
     </div>
   </footer>
 
+  <!-- Project Data (easier to manage this way, believe me) -->
+  <script src="js/projects-data.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
       const projectId = params.get('id') || '1';
 
-      // Dynamic Data (Placeholder)
-      const projectData = {
-        '1': { title: 'Autonomous Robot', subtitle: 'Robotics / 2024', img: 'https://placehold.co/1200x600/222/fff?text=Autonomous+Robot' },
-        '2': { title: 'Smart Home Hub', subtitle: 'IoT / 2024', img: 'https://placehold.co/1200x600/333/fff?text=Smart+Home+Hub' },
-        '3': { title: 'Line Follower', subtitle: 'Robotics / 2023', img: 'https://placehold.co/1200x600/444/fff?text=Line+Follower' },
-        '4': { title: 'Weather Station', subtitle: 'IoT / 2023', img: 'https://placehold.co/1200x600/555/fff?text=Weather+Station' },
-        '5': { title: 'Portfolio Site', subtitle: 'Web Dev / 2025', img: 'https://placehold.co/1200x600/666/fff?text=Portfolio+Site' }
-      };
-
+      // Use data from external file
       const data = projectData[projectId] || projectData['1'];
 
       document.title = `${data.title} — Project Details`;
+
+      // Hero Section
       document.getElementById('project-title').textContent = data.title;
       document.getElementById('project-subtitle').textContent = data.subtitle;
       document.getElementById('hero-bg').src = data.img;
+
+      // Main Content
       document.getElementById('main-img').src = data.img;
+
+      // Description
+      const contentDiv = document.querySelector('.project-content');
+
+      let featuresHtml = '';
+      if (data.features && data.features.length > 0) {
+        featuresHtml = `
+          <h4 class="fw-bold mt-5 mb-3 text-white">Key Features</h4>
+          <ul class="list-group list-group-flush mb-5">
+            ${data.features.map(feature => `
+              <li class="list-group-item bg-transparent ps-0 text-light">
+                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                ${feature}
+              </li>
+            `).join('')}
+          </ul>
+        `;
+      }
+
+      contentDiv.innerHTML = `
+        <h3 class="fw-bold mb-4 text-white">About the Project</h3>
+        ${data.description}
+        ${featuresHtml}
+      `;
+
+      // Project Info Sidebar
+      const infoList = document.querySelector('.card ul.list-unstyled');
+      if (data.info) {
+        infoList.innerHTML = `
+          <li class="mb-2"><strong>Role:</strong> ${data.info.role}</li>
+          <li class="mb-2"><strong>Timeline:</strong> ${data.info.timeline}</li>
+          <li class="mb-2"><strong>Tech Stack:</strong> ${data.info.stack}</li>
+        `;
+      }
     });
   </script>
 
