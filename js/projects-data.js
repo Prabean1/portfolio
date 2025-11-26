@@ -1,3 +1,6 @@
+// It's easier to manage a template for each project than to have multiple different fields for every project.
+
+
 const projectData = {
   '1': {
     title: 'Network Infrastructure Design',
@@ -106,7 +109,7 @@ const projectData = {
       'Literally nothing'
     ],
     info: {
-      role: 'tired',
+      role: 'Student',
       timeline: 'in the distant future',
       stack: 'my laptop, me and coffee'
     },
@@ -117,5 +120,5 @@ const projectData = {
 
 const socialsData = {
   link: 'https://www.linkedin.com/in/praveen-mukesh-kumar/',
-  buttonText: 'Connect with me!'
+  buttonText: 'Connect on LinkedIn'
 };

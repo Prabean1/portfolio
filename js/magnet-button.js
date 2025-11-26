@@ -1,8 +1,3 @@
-/**
- * Magnet Button Effect
- * Makes elements with class .magnet-button magnetically attract to the mouse cursor.
- */
-
 document.addEventListener('DOMContentLoaded', () => {
   const magnets = document.querySelectorAll('.magnet-button');
 
@@ -12,10 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
 
-      // Strength of the magnet effect
       const strength = 20;
 
-      // Calculate new position
       const xPos = (x / rect.width) * strength;
       const yPos = (y / rect.height) * strength;
 
