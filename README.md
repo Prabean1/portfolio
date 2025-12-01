@@ -33,7 +33,7 @@ This repository hosts the presentation layer for my work across several fields. 
 *   **Computer Vision & AI:** Custom object detection implementation (YOLOv11/PyTorch).
 *   **Network Infrastructure:** Enterprise-level network design and security implementation.
 *   **Product Prototyping:** UI/UX design and functional app prototyping.
-*   **Arts Leadership:** Management and performance history within the Ngee Ann Kongsi ecosystem.
+*   **Arts Leadership:** Management and performance history.
 
 ---
 
