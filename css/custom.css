@@ -346,3 +346,37 @@ main {
   transform: translateX(200%) skewX(-20deg);
   transition: transform 0.5s ease-in-out;
 }
+
+/* Timeline Styles */
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  left: -6px;
+  top: 5px;
+  border: 2px solid var(--bg-dark-midnight);
+}
+
+.timeline-content {
+  padding-bottom: 3rem;
+}
+
+.timeline-entry:last-child .timeline-content {
+  border-left: 2px solid transparent !important;
+}
+
+@media (max-width: 768px) {
+  .timeline-entry .text-md-end {
+    text-align: left !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-content {
+    border-left: 2px solid #6c757d !important;
+    padding-left: 1.5rem !important;
+    margin-left: 0.5rem;
+  }
+
+  .timeline-dot {
+    left: -7px;
+  }
+}
