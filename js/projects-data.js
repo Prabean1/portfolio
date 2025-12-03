@@ -60,6 +60,7 @@ const projectData = {
       <p>Assigned a particular object to detect (bowl). Ive taken effort to collate a dataset, tailored to detected the object in any environment. Occluded, overturned, all shapes and sizes. Developed Python scripts for polite scraping of images, downloading and utilising pre existing datasets (e.g. OpenImagesV7, COCO) and utilised Roboflow for dataset annotation and training.</p>
       <p>Currently focused on improving precision (mAP50 & mAP50-95) (see Drive for table and progress, updated regularly!) by adjusting LR, enabling cos_LR for improved learning progress and carefully utilising augmentations to prepare the model for any sort of environment. On track to hit 0.9+ in Box(P).</p>
       <p>Next Goal: Develop an UI for the model to allow for real-time object detection, confidence slider and user convenience coupled with an industry level accurate model.</p>
+      <p>Towards the end, retrained on the same dataset as risk of overfitting is extremely low, optimiser=AdamW for fine tuning.</p>
     `,
     features: [
       'Real Time Object Detection',

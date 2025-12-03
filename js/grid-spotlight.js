@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Optimize for high DPI
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // Optimize for high DPI
   container.appendChild(renderer.domElement);
 
   const gridSize = 80; // Number of grid cells
@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
       uMouse: { value: new THREE.Vector2(0, 0) },
       uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
       uGridColor: { value: new THREE.Color('#FF2E2E') },
-      uGridThickness: { value: 0.05 }
+      uGridThickness: { value: 0.05 },
+      uSpotlightEnabled: { value: 1.0 }
     },
     vertexShader: `
       varying vec2 vUv;
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fragmentShader: `
       uniform vec3 uGridColor;
       uniform float uGridThickness;
+      uniform float uSpotlightEnabled;
       uniform vec2 uMouse;
       uniform vec2 uResolution;
       varying vec2 vUv;
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Highlight near mouse
         float highlight = max(0.0, 0.3 - dist) / 0.3; // 0.3 radius
-        alpha += grid * highlight * 0.7;
+        alpha += grid * highlight * 0.7 * uSpotlightEnabled;
 
         gl_FragColor = vec4(uGridColor, alpha);
       }
@@ -105,5 +107,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   animate();
+
+  // --- Spotlight Toggle Logic ---
+  const toggle = document.getElementById('gridSpotlightToggle');
+
+  // 1. Read from localStorage (default to 'true' if not set)
+  const storedSetting = localStorage.getItem('gridSpotlightEnabled');
+  const isEnabled = storedSetting === null ? true : (storedSetting === 'true');
+
+  // 2. Set initial state
+  material.uniforms.uSpotlightEnabled.value = isEnabled ? 1.0 : 0.0;
+  if (toggle) {
+    toggle.checked = isEnabled;
+  }
+
+  // 3. Handle toggle changes
+  if (toggle) {
+    toggle.addEventListener('change', (e) => {
+      const checked = e.target.checked;
+      material.uniforms.uSpotlightEnabled.value = checked ? 1.0 : 0.0;
+      localStorage.setItem('gridSpotlightEnabled', checked);
+    });
+  }
 });
 
