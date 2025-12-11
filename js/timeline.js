@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('timeline-container');
 
-    
+
     [...timelineData].reverse().forEach((item, index) => {
         const entry = document.createElement('div');
         entry.className = 'timeline-entry mb-5 position-relative';
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             flexHtml = `
                 <div class="mt-3">
                     <button class="btn btn-sm btn-outline-secondary spoiler-btn" type="button" data-bs-toggle="collapse" data-bs-target="#flex-${index}" aria-expanded="false" aria-controls="flex-${index}">
-                        Weird Flex but Okay
+                        Extras
                     </button>
                     <div class="collapse mt-2" id="flex-${index}">
                         <div class="card card-body bg-dark text-light border-secondary small">

@@ -104,18 +104,18 @@ const projectData = {
     summary: 'Hard at work on more cool projects, trust me.',
     img: 'https://placehold.co/1200x600/666/fff?text=WIP',
     description: `
-      <p>Unsurprisingly, I have more projects in the works. What did you expect to read here?</p>
+      <p>Planning to pursue a more hardware centric project, but I need to finish my current projects first. Most likely working with Arduino and microcontrollers!</p>
     `,
     features: [
-      'Literally nothing'
+      'NA'
     ],
     info: {
       role: 'Student',
       timeline: 'in the distant future',
-      stack: 'my laptop, me and coffee'
+      stack: 'My laptop, me and coffee'
     },
-    driveLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    buttonText: 'View sneak peek!'
+    driveLink: '#',
+    buttonText: 'Soon to be updated! Clicking does nothing, FYI.'
   }
 };
 
