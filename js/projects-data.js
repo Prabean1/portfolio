@@ -61,6 +61,7 @@ const projectData = {
       <p>Currently focused on improving precision (mAP50 & mAP50-95) (see Drive for table and progress, updated regularly!) by adjusting LR, enabling cos_LR for improved learning progress and carefully utilising augmentations to prepare the model for any sort of environment. On track to hit 0.9+ in Box(P).</p>
       <p>Next Goal: Develop an UI for the model to allow for real-time object detection, confidence slider and user convenience coupled with an industry level accurate model.</p>
       <p>Towards the end, retrained on the same dataset as risk of overfitting is extremely low, optimiser=AdamW for fine tuning.</p>
+      <p>Optimized the model for production by exporting to ONNX format, significantly reducing inference latency and memory footprint to enable real-time deployment on resource-constrained hardware.</p>
     `,
     features: [
       'Real Time Object Detection',
@@ -83,6 +84,7 @@ const projectData = {
     description: `
        <p>This very website! Built with Bootstrap and custom JS to showcase my projects and skills.</p>
       <p>Features a custom grid distortion effect and a dynamic project gallery.</p>
+      <p>Leveraged AI to optimise for low end mobile devices anddesktops.</p>
     `,
     features: [
       'Responsive Design',
@@ -92,7 +94,7 @@ const projectData = {
     ],
     info: {
       role: 'Full Stack Dev',
-      timeline: '1 Week',
+      timeline: '3 Weeks',
       stack: 'HTML, CSS, Bootstrap, Three.js'
     },
     driveLink: 'https://prabean1.github.io/portfolio/',
@@ -111,11 +113,11 @@ const projectData = {
     ],
     info: {
       role: 'Student',
-      timeline: 'in the distant future',
+      timeline: 'NA',
       stack: 'My laptop, me and coffee'
     },
     driveLink: '#',
-    buttonText: 'Soon to be updated! Clicking does nothing, FYI.'
+    buttonText: 'NA'
   }
 };
 
