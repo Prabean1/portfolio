@@ -95,8 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
     material.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
   });
 
+  // Performance monitoring variables
+  let lastTime = 0;
+  let frameCount = 0;
+  let lowFpsDuration = 0;
+  let isOptimized = false;
+
   // Animation Loop
-  function animate() {
+  function animate(time) {
     requestAnimationFrame(animate);
 
     // Smooth mouse movement
@@ -104,6 +110,42 @@ document.addEventListener('DOMContentLoaded', () => {
     material.uniforms.uMouse.value.copy(mouse);
 
     renderer.render(scene, camera);
+
+    // Monitor Performance
+    if (!isOptimized && time) {
+      if (lastTime === 0) {
+        lastTime = time;
+      } else {
+        frameCount++;
+        const delta = time - lastTime;
+
+        if (delta >= 1000) {
+          // Skip check if tab was inactive or frame dropped significantly
+          if (delta > 2500) {
+            frameCount = 0;
+            lastTime = time;
+            return;
+          }
+
+          const fps = (frameCount * 1000) / delta;
+
+          if (fps < 40) {
+            lowFpsDuration += delta;
+          } else {
+            lowFpsDuration = 0;
+          }
+
+          if (lowFpsDuration > 3000) {
+            renderer.setPixelRatio(0.8); // Reduce pixel ratio for better performance
+            isOptimized = true;
+            console.log("Performance adjustment: Reduced pixel ratio to 0.8 due to low FPS.");
+          }
+
+          frameCount = 0;
+          lastTime = time;
+        }
+      }
+    }
   }
 
   animate();
