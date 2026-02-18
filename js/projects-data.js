@@ -26,33 +26,34 @@ const projectData = {
     buttonText: 'View PT and Report!'
   },
   '2': {
-    title: 'Lively App Prototype',
-    subtitle: 'Interdisciplinary Project / 2024',
-    summary: 'Intuitive dashboard for taking charge of your health.',
-    img: 'img/lively.png',
+    title: 'Smart Car Park System',
+    subtitle: 'Microcontrollers and Signal Processing / 2025',
+    summary: 'Automated Car Park System with Arduino (ATmega328)',
+    img: 'img/schematic.png',
     description: `
-      <p>The core motive of Lively is to help individuals overcome challenges related to unhealthy stress coping mechanisms, irregular sleep habits, and poorly managed diets, which negatively impact their productivity and overall well-being.</p>
-      <p>Initially, the goal was to assist busy professionals with sleep optimization, but this was broadened to a prototype that promotes inclusivity for people from all walks of life to achieve their best physical and mental state.</p>
-      <p>(For the record, this project was done before Thunkable integrated AI into its website.)</p>
+      <p>This project involved designing and prototyping a miniature automated parking garage using an Arduino Uno. The system manages vehicle entry and exit via SG90 servo-actuated barriers, utilizing integrated IR/ultrasonic sensors to track real-time capacity.</p>
+
+      <p>A key technical challenge was optimizing the system to run on a single microcontroller by reconfiguring Analog inputs as Digital I/O to manage a high peripheral count, including a 16x2 I2C LCD and a 7-segment display. To ensure reliability in varying environments, I developed a custom auto-calibration algorithm in C that samples ambient light levels upon boot to establish dynamic trigger baselines.</p>
+
+      <p>The system implements hysteresis and non-blocking timing logic to maintain a 95%+ success rate in vehicle detection, preventing flickering triggers (e.g. servos that keep opening and closing too many times too quickly) and ensuring smooth multitasking between sensor polling and UI updates.</p>
     `,
     features: [
-      'Sleep Tracker and Tips',
-      'BMR/BMI Calculation',
-      'Personalized Plans (Meal and Workout)',
-      'Step Tracking and Reward System',
-      'Relaxation Techniques'
+      'Dynamic Auto-Calibration Logic',
+      'Hysteresis & Signal Stability',
+      'Optimized Resource Architecture (Integrating everything with one Arduino UNO)',
+      'Asynchronous Multitasking'
     ],
     info: {
-      role: 'Full Stack Dev',
-      timeline: 'Oct 2024 - Jan 2025',
+      role: 'Embedded Systems Developer (Hardware & Core Logic)',
+      timeline: 'Jan 2026 - Feb 2025',
       stack: 'Thunkable, Canva, surviving without ChatGPT'
     },
     driveLink: 'https://drive.google.com/drive/folders/13wFpx7RHGz_a9Lt-ZUuVGVY1iooiwmPp?usp=sharing',
-    buttonText: 'View Presentation Files'
+    buttonText: 'View Files'
   },
   '3': {
     title: 'Object Detection System (YOLOv11)',
-    subtitle: 'Computer Vision and AI (ONGOING) / 2025',
+    subtitle: 'Computer Vision and AI / 2025',
     summary: 'Object Detection System (YOLOv11) for real-time object detection and tracking.',
     img: 'img/cvai.png',
     description: `
