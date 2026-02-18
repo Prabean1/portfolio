@@ -46,7 +46,7 @@ const projectData = {
     info: {
       role: 'Embedded Systems Developer (Hardware & Core Logic)',
       timeline: 'Jan 2026 - Feb 2026',
-      stack: 'Thunkable, Canva, surviving without ChatGPT'
+      stack: 'Arduino, C, Signal Processing, Circuit Design'
     },
     driveLink: 'https://drive.google.com/drive/folders/13wFpx7RHGz_a9Lt-ZUuVGVY1iooiwmPp?usp=sharing',
     buttonText: 'View Files'
