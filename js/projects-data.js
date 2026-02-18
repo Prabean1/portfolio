@@ -45,7 +45,7 @@ const projectData = {
     ],
     info: {
       role: 'Embedded Systems Developer (Hardware & Core Logic)',
-      timeline: 'Jan 2026 - Feb 2025',
+      timeline: 'Jan 2026 - Feb 2026',
       stack: 'Thunkable, Canva, surviving without ChatGPT'
     },
     driveLink: 'https://drive.google.com/drive/folders/13wFpx7RHGz_a9Lt-ZUuVGVY1iooiwmPp?usp=sharing',
@@ -60,14 +60,14 @@ const projectData = {
       <p>Object Detection System (YOLOv11) for real-time object detection and tracking.</p>
       <p>Assigned a particular object to detect (bowl). Ive taken effort to collate a dataset, tailored to detected the object in any environment. Occluded, overturned, all shapes and sizes. Developed Python scripts for polite scraping of images, downloading and utilising pre existing datasets (e.g. OpenImagesV7, COCO) and utilised Roboflow for dataset annotation and training.</p>
       <p>Currently focused on improving precision (mAP50 & mAP50-95) (see Drive for table and progress, updated regularly!) by adjusting LR, enabling cos_LR for improved learning progress and carefully utilising augmentations to prepare the model for any sort of environment. On track to hit 0.9+ in Box(P).</p>
-      <p>Next Goal: Develop an UI for the model to allow for real-time object detection, confidence slider and user convenience coupled with an industry level accurate model.</p>
+      <p>Developed an UI for the model to allow for real-time object detection, confidence slider and user convenience coupled with an industry level accurate model.</p>
       <p>Towards the end, retrained on the same dataset as risk of overfitting is extremely low, optimiser=AdamW for fine tuning.</p>
       <p>Optimized the model for production by exporting to ONNX format, significantly reducing inference latency and memory footprint to enable real-time deployment on resource-constrained hardware.</p>
     `,
     features: [
       'Real Time Object Detection',
       'Curated weights and dataset',
-      '(Pending) Seamless UI/UX'
+      'Seamless UI/UX'
     ],
     info: {
       role: 'Lead (and sole) Developer',
@@ -75,7 +75,7 @@ const projectData = {
       stack: 'YOLOv11, PyTorch, Roboflow, Anaconda'
     },
     driveLink: 'https://drive.google.com/drive/folders/116tm3P9zhabc0mInC21dBzW7KW6fa1-k?usp=sharing',
-    buttonText: 'View Updated Table (and soon UI/UX)'
+    buttonText: 'View Training Table and UI/UX)'
   },
   '4': {
     title: 'Portfolio Site',
