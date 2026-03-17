@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const navbar = document.querySelector('.navbar');
+  let isScrolled = false;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    const shouldBeScrolled = window.scrollY > 50;
+    if (shouldBeScrolled === isScrolled) return;
+    isScrolled = shouldBeScrolled;
+
+    if (isScrolled) {
       navbar.classList.add('scrolled', 'bg-dark', 'shadow');
       navbar.classList.remove('bg-transparent');
     } else {
@@ -11,8 +16,5 @@ document.addEventListener('DOMContentLoaded', () => {
       navbar.classList.add('bg-transparent');
     }
   });
-
-  // the bounce cards have no logic, its all css. the stuff of nightmares really.
-
 
 });

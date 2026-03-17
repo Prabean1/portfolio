@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const magnets = document.querySelectorAll('.magnet-button');
 
   magnets.forEach((magnet) => {
+    magnet.addEventListener('mouseenter', () => {
+      magnet.style.transition = 'transform 0.1s ease-out';
+    });
+
     magnet.addEventListener('mousemove', (e) => {
       const rect = magnet.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
@@ -13,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const yPos = (y / rect.height) * strength;
 
       magnet.style.transform = `translate(${xPos}px, ${yPos}px)`;
-      magnet.style.transition = 'transform 0.1s ease-out';
     });
 
     magnet.addEventListener('mouseleave', () => {

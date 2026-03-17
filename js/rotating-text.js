@@ -32,5 +32,5 @@ document.addEventListener('DOMContentLoaded', () => {
   textElement.classList.add('fade-in');
 
   // Start rotation
-  setInterval(rotateText, 3000); // Change every 3 seconds
+  const rotationInterval = setInterval(rotateText, 3000); // Change every 3 seconds
 });

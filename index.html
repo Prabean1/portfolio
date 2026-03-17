@@ -39,12 +39,6 @@
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#socials">Socials</a></li>
           <li class="nav-item ms-lg-3"><a class="btn btn-outline-primary" href="#contact">Contact</a></li>
-          <li class="nav-item ms-lg-3 d-flex align-items-center">
-            <div class="form-check form-switch mb-0">
-              <input class="form-check-input" type="checkbox" role="switch" id="gridSpotlightToggle" checked>
-              <label class="form-check-label text-white small" for="gridSpotlightToggle">Spotlight</label>
-            </div>
-          </li>
         </ul>
       </div>
     </div>
@@ -261,6 +255,14 @@
         `;
 
         container.appendChild(card);
+      });
+
+      // Equalize card heights to the tallest card, best approach, DO NOT TOUCH
+      requestAnimationFrame(() => {
+        const cards = container.querySelectorAll('.project-card');
+        let maxHeight = 0;
+        cards.forEach(c => { if (c.offsetHeight > maxHeight) maxHeight = c.offsetHeight; });
+        cards.forEach(c => { c.style.minHeight = maxHeight + 'px'; });
       });
     });
   </script>

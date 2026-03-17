@@ -102,23 +102,27 @@ const projectData = {
     buttonText: 'View website!'
   },
   '5': {
-    title: 'More incoming soon!',
-    subtitle: 'Plans / 2025 onwards',
-    summary: 'Hard at work on more cool projects, trust me.',
-    img: 'https://placehold.co/1200x600/666/fff?text=WIP',
+    title: 'NP Robotics Research & Innovation Center',
+    subtitle: 'Robotics / 2026',
+    summary: 'Assistant Researcher working on a Multi-Purpose Outdoor Heavy-Duty Materials Handling Follower Robot.',
+    img: 'https://placehold.co/1200x600/666/fff?text=RRIC',
     description: `
-      <p>Planning to pursue a more hardware centric project, but I need to finish my current projects first. Most likely working with Arduino and microcontrollers!</p>
+      <p>Currently working as an Assistant Researcher for the NP Robotics Research & Innovation Center on a Multi-Purpose Outdoor Heavy-Duty Materials Handling Follower Robot.</p>
+      <p>Currently focused on developing a ROS2 Humble software stack for wireless control, LiDAR-based object detection and autonomous human following logic.</p>
     `,
     features: [
-      'NA'
+      'ROS2 Humble Software Stack',
+      'LiDAR-based Object Detection',
+      'Autonomous Human Following Logic',
+      'Wireless Control'
     ],
     info: {
-      role: 'Student',
-      timeline: 'NA',
-      stack: 'My laptop, me and coffee'
+      role: 'Assistant Researcher (Intern)',
+      timeline: 'Mar 2026 - Present',
+      stack: 'ROS2, LiDAR, Python'
     },
     driveLink: '#',
-    buttonText: 'NA'
+    buttonText: 'More details coming soon!'
   }
 };
 
